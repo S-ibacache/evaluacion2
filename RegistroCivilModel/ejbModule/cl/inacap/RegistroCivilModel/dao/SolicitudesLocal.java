@@ -12,7 +12,7 @@ public interface SolicitudesLocal {
 	void add(Solicitud solicitud);
 	List<Solicitud> getAll();
 	void remove(Solicitud solicitud);
-	List<Solicitud> filterTipo(Solicitud tipo);
+	//List<Solicitud> filterTipo(Solicitud tipo);
 	
 	
 }

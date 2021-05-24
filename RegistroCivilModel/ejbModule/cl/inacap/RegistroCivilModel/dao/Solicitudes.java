@@ -42,10 +42,10 @@ public class Solicitudes implements SolicitudesLocal {
 		
 	}
 
-	@Override
-	public List<Solicitud> filterTipo(Solicitud tipo) {
+	//@Override
+	//public List<Solicitud> filterTipo(Solicitud tipo) {
 		
-		return solicitudes.stream().filter(s->s.getTipo().contains(tipo)).collect(Collectors.toList());
-	}
+	//	return solicitudes.stream().filter(s->s.getTipo().contains(tipo)).collect(Collectors.toList());
+	//}
 
 }
