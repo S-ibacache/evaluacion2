@@ -23,7 +23,7 @@
          Ingrsar Solicitud
       </a>
 
-      <a class="navbar-item">
+      <a class="navbar-item " href="AtenderSolicitudController.do">
        Atender Solicitud
       </a>
 

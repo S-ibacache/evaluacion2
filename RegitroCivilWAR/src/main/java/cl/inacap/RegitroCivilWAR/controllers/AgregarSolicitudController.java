@@ -4,11 +4,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import cl.inacap.RegistroCivilModel.dao.SolicitudesLocal;
+import cl.inacap.RegistroCivilModel.dto.Solicitud;
 
 /**
  * Servlet implementation class AgregarSolicitudController
@@ -16,7 +20,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/AgregarSolicitudController.do")
 public class AgregarSolicitudController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+      @Inject
+      private SolicitudesLocal solicitudesDAO;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -71,6 +76,11 @@ public class AgregarSolicitudController extends HttpServlet {
 		
 		if(errores.isEmpty()) {
 			
+			Solicitud solicitud= new Solicitud();
+			solicitud.setTipo(tipo);
+			solicitud.setNombre(nombre+""+apellido);
+			solicitud.setRut(rut);
+			solicitud.setNroAtencion(11);
 			request.setAttribute("mensaje", "solicitud registrada correctamente");
 			
 		}else {
